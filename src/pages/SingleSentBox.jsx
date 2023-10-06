@@ -23,7 +23,7 @@ function SingleSentBox() {
   const id = data.id;
   console.log(data);
   const goBackToInbox = () => {
-    navigate("/user");
+    navigate("/");
   };
   const deleteMail = async () => {
     try {

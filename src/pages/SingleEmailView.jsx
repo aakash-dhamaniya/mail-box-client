@@ -23,7 +23,7 @@ function SingleEmailView() {
   console.log(data);
 
   const goBackToInbox = () => {
-    navigate("/user");
+    navigate("/");
   };
   const deleteMail = async () => {
     try {
