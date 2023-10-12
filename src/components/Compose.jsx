@@ -5,7 +5,7 @@ import { AiOutlineSend } from "react-icons/ai";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import axios from "axios";
 import { baseAddress } from "../utils/autKey/api";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { mailsAction } from "../store/mails";
 import { useDispatch } from "react-redux";
 export default function Compose() {
@@ -49,8 +49,11 @@ export default function Compose() {
         `${baseAddress}/mailsData/${toMail}/emails.json`,
         composedMail
       );
-      toast.success("email sent");
+
       console.log("compose", res);
+      toRef.current.value = "";
+      subRef.current.value = "";
+      mesRef.current.value = "";
     } catch (error) {
       const message = error.response.data.error.message;
       toast.error(message);
@@ -72,6 +75,7 @@ export default function Compose() {
       const datawithkey = { ...sentMail, id: res.data.name };
       console.log(res);
       dispatch(mailsAction.mailSent(datawithkey));
+      toast.success("mail sent ");
     } catch (error) {
       toast.error("somthing went wrong");
     }

@@ -34,7 +34,7 @@ function SingleSentBox() {
       console.log(res);
       toast.success("mail deleted ");
       dispatch(getSentMail());
-      navigate("/user");
+      navigate("/");
     } catch (error) {
       toast.error("unable to delete");
     }

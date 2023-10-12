@@ -34,7 +34,7 @@ function SingleEmailView() {
       console.log(res);
       toast.success("mail deleted ");
       dispatch(getInbox());
-      navigate("/user");
+      navigate("/");
     } catch (error) {
       toast.error("unable to delete");
     }

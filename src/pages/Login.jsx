@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { Button, Card, Form, InputGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import axios from "axios";
 import { authSignIn } from "../utils/autKey/api";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store/auth";
 import { Watch } from "react-loader-spinner";
+import toast from "react-hot-toast";
 export default function Login() {
   const navigate = useNavigate();
   const emailRef = useRef();
@@ -35,7 +35,7 @@ export default function Login() {
         })
       );
       dispatch(authAction.loader());
-      toast.success("login successfully");
+      toast.success("Successfully logged in!");
       navigate("/");
       console.log(response);
     } catch (error) {

@@ -13,6 +13,7 @@ import SingleSentBox from "./pages/SingleSentBox";
 import { ToastContainer } from "react-bootstrap";
 import PrivateRoute from "./utils/privateRoute/PrivateRoute";
 import Preventgoback from "./utils/privateRoute/Preventgoback";
+import { Toaster } from "react-hot-toast";
 function App() {
   const mail = useSelector((state) => state.authentication.email);
   // console.log(mail);
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ToastContainer />
+      <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route
           path="/"
