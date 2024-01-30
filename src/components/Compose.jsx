@@ -51,9 +51,6 @@ export default function Compose() {
       );
 
       console.log("compose", res);
-      toRef.current.value = "";
-      subRef.current.value = "";
-      mesRef.current.value = "";
     } catch (error) {
       const message = error.response.data.error.message;
       toast.error(message);
@@ -76,6 +73,9 @@ export default function Compose() {
       console.log(res);
       dispatch(mailsAction.mailSent(datawithkey));
       toast.success("mail sent ");
+      toRef.current.value = "";
+      subRef.current.value = "";
+      mesRef.current.value = "";
     } catch (error) {
       toast.error("somthing went wrong");
     }

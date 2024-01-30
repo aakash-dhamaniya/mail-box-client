@@ -117,6 +117,7 @@ const mailSlice = createSlice({
       transformedData.sort((a, b) => {
         return new Date(b.time) - new Date(a.time);
       });
+      console.log("sentEmailBox", transformedData);
       state.sent = transformedData;
     },
     [getSentMail.rejected]: (state) => {

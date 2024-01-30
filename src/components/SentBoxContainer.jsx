@@ -5,7 +5,7 @@ import HTMLReactParser from "html-react-parser";
 function SentBoxContainer(props) {
   const navigate = useNavigate();
 
-  console.log(props);
+  // console.log(props);
   function view() {
     navigate(`/sentbox/${props.id}`);
   }
